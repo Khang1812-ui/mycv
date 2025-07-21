@@ -1,0 +1,188 @@
+/* --- Biến CSS để dễ dàng quản lý màu sắc và font chữ --- */
+:root {
+    --primary-bg: #E9E7EA;      /* Màu nền chính của container */
+    --secondary-bg: #D5D5D5;    /* Màu nền của trang */
+    --text-color: #333333;      /* Màu chữ đậm */
+    --border-color: #BDBDBD;    /* Màu đường viền */
+    --accent-color: #0D4C92;    /* Màu nhấn */
+    --hover-bg: #f0f0f0;        /* Màu hover */
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* --- Toàn trang --- */
+body {
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Lớp phủ để làm nền mờ trắng dễ đọc hơn --- */
+.overlay {
+    background-color: rgba(255, 255, 255, 0.307);
+    min-height: 100vh;
+    width: 100%;
+    padding: 50px 0;
+}
+
+/* --- Container chính --- */
+.container {
+    background-color: var(--primary-bg);
+    width: 1000px;
+    max-width: 95%;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 35% 60%;
+    column-gap: 5%;
+    row-gap: 30px;
+}
+
+/* --- Avatar --- */
+.avatar {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.avatar img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-bg);
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+/* --- Tên và liên hệ --- */
+.name {
+    padding-left: 30px;
+    border-left: 1px solid var(--border-color);
+}
+.name h1 {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    font-size: xxx-large;
+    margin: 0 0 5px;
+}
+.name .specialize {
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+}
+.name .contact {
+    padding: 0;
+    margin-top: 15px;
+    list-style: none;
+}
+.name .contact li {
+    padding: 8px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.name .contact li:hover {
+    color: var(--accent-color);
+    transform: translateX(10px);
+}
+.name .contact span {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    margin-right: 15px;
+    color: var(--accent-color);
+}
+.name .contact i {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* --- Thông tin cá nhân (Cột trái trên) --- */
+.info {
+    text-align: right;
+}
+.info ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 30px;
+}
+.info ul span {
+    display: inline-block;
+    padding: 2px 5px;
+}
+
+/* --- Tiêu đề --- */
+h2 {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* --- Giới thiệu bản thân --- */
+.intro {
+    padding-left: 30px;
+    border-left: 1px solid var(--border-color);
+    text-align: justify;
+}
+
+/* --- Trình độ & kỹ năng --- */
+.experience {
+    text-align: right;
+}
+.experience h4 {
+    margin: 20px 0 10px;
+    font-family: var(--font-heading);
+}
+.skills {
+    margin-top: 50px;
+}
+.experience ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.experience ul span {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border-radius: 15px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+.experience ul span:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- Thông tin cá nhân khác --- */
+.project {
+    padding-left: 30px;
+    text-align: justify;
+    border-left: 1px solid var(--border-color);
+}
+.project .item {
+    position: relative;
+    padding-bottom: 15px;
+}
+.project h4 {
+    margin: 20px 0 10px;
+    font-family: var(--font-heading);
+}
+.project .item::before {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: var(--accent-color);
+    content: '';
+    border-radius: 50%;
+    left: -37px;
+    border: 3px solid var(--primary-bg);
+}
